@@ -1,9 +1,9 @@
 {
-    "name": "whiteoctober/tcpdf-bundle",
+    "name": "jhovanic/tcpdf-bundle",
     "type": "symfony-bundle",
     "description": "A bundle to easily integrate TCPDF into Symfony2",
     "keywords": ["pdf", "tcpdf"],
-    "homepage": "https://github.com/whiteoctober/WhiteOctoberTCPDFBundle",
+    "homepage": "https://github.com/JhovaniC/TCPDFBundle",
     "license": "MIT",
     "authors": [
         {
@@ -17,7 +17,7 @@
         "tecnick.com/tcpdf": "*"
     },
     "autoload": {
-        "psr-0": { "WhiteOctober\\TCPDFBundle": "" }
+        "psr-0": { "JhovaniC\\TCPDFBundle": "" }
     },
-    "target-dir": "WhiteOctober/TCPDFBundle"
+    "target-dir": "JhovaniC/TCPDFBundle"
 }

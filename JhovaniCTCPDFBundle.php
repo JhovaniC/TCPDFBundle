@@ -1,11 +1,12 @@
 <?php
 
-namespace WhiteOctober\TCPDFBundle;
+namespace JhovaniC\TCPDFBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Filesystem\Filesystem;
 
-class WhiteOctoberTCPDFBundle extends Bundle
+class JhovaniCTCPDFBundle extends Bundle
 {
     /**
      * Ran on bundle boot, our TCPDF configuration constants
@@ -14,7 +15,7 @@ class WhiteOctoberTCPDFBundle extends Bundle
     public function boot()
     {
         // Define our TCPDF variables
-        $config = $this->container->getParameter('white_october_tcpdf.tcpdf');
+        $config = $this->container->getParameter('jhovanic_tcpdf.tcpdf');
 
         // TCPDF needs some constants defining if our configuration
         // determines we should do so (default true)
@@ -38,6 +39,13 @@ class WhiteOctoberTCPDFBundle extends Bundle
                         }
 
                         define($constKey, $value);
+                    }
+                }
+
+                // All pdf_ values defined in config.yml
+                if (preg_match("/^pdf_/i", $k)) {
+                    if (!defined($constKey)) {
+                        define($constKey, $v);
                     }
                 }
 

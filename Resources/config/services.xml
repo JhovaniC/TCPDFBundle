@@ -6,9 +6,9 @@
     <services>
 
         <!-- TCPDF service -->
-        <service id="white_october.tcpdf" class="WhiteOctober\TCPDFBundle\Controller\TCPDFController">
-            <file>%white_october_tcpdf.file%</file>
-            <argument>%white_october_tcpdf.class%</argument>
+        <service id="jhovanic.tcpdf" class="JhovaniC\TCPDFBundle\Controller\TCPDFController">
+            <file>%jhovanic_tcpdf.file%</file>
+            <argument>%jhovanic_tcpdf.class%</argument>
         </service>
 
     </services>

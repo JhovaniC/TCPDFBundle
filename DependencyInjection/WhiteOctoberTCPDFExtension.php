@@ -1,6 +1,6 @@
 <?php
 
-namespace WhiteOctober\TCPDFBundle\DependencyInjection;
+namespace JhovaniC\TCPDFBundle\DependencyInjection;
 
 use Symfony\Component\HttpKernel\DependencyInjection\Extension,
     Symfony\Component\DependencyInjection\ContainerBuilder,
@@ -9,7 +9,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension,
     Symfony\Component\Config\Definition\Processor,
     Symfony\Component\Config\FileLocator;
 
-use WhiteOctober\TCPDFBundle\DependencyInjection\Configuration;
+use JhovaniC\TCPDFBundle\DependencyInjection\Configuration;
 
 class WhiteOctoberTCPDFExtension extends Extension
 {
@@ -26,9 +26,9 @@ class WhiteOctoberTCPDFExtension extends Extension
         $configuration = new Configuration();
         $config = $processor->processConfiguration($configuration, $configs);
 
-        $container->setParameter('white_october_tcpdf.file', $config['file']);
-        $container->setParameter('white_october_tcpdf.class', $config['class']);
-        $container->setParameter('white_october_tcpdf.tcpdf', $config['tcpdf']);
+        $container->setParameter('jhovanic_tcpdf.file', $config['file']);
+        $container->setParameter('jhovanic_tcpdf.class', $config['class']);
+        $container->setParameter('jhovanic_tcpdf.tcpdf', $config['tcpdf']);
 
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');

@@ -1,6 +1,6 @@
 <?php
 
-namespace WhiteOctober\TCPDFBundle\Controller;
+namespace JhovaniC\TCPDFBundle\Controller;
 
 use ReflectionClass;
 

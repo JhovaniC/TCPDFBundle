@@ -1,44 +1,28 @@
-WhiteOctoberTCPDFBundle
+JhovaniCTCPDFBundle
 =======================
 
 This bundle facilitates easy use of the TCPDF PDF generation library in
 Symfony2 applications.
 
+It's based on the [WhiteOctoberTCPDFBundle][1], <- check that out!
+
 Installation
 ------------
 
-### Step 1: Add both the bundle and TCPDF to your `deps` file
+### Step 1: Add this to your composer.json
 ```
-[WhiteOctoberTCPDFBundle]
-    git=http://github.com/whiteoctober/WhiteOctoberTCPDFBundle.git
-    target=/bundles/WhiteOctober/TCPDFBundle
-
-[TCPDF]
-    git=git://tcpdf.git.sourceforge.net/gitroot/tcpdf/tcpdf
-    target=/tecnick.com/tcpdf
+"require" : {
+        "jhovanic/tcpdf-bundle": "dev-master"
+    }
 ```
 
-Now run the vendors script to download the bundle and library:
+Now run the composer update to download the bundle and library:
 
-``` bash
-$ php bin/vendors install
+```
+$ php composer.phar update
 ```
 
-### Step 2: Configure the autoloader
-
-Add the `WhiteOctober` namespace to your autoloader:
-
-``` php
-<?php
-// app/autoload.php
-
-$loader->registerNamespaces(array(
-    // ...
-    'WhiteOctober' => __DIR__.'/../vendor/bundles',
-));
-```
-
-### Step 3: Enable the bundle in the kernel
+### Step 2: Enable the bundle in the kernel
 
 Add the bundle to the `registerBundles()` method in your kernel:
 
@@ -50,7 +34,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new WhiteOctober\TCPDFBundle\WhiteOctoberTCPDFBundle(),
+        new JhovaniC\TCPDFBundle\JhovaniCTCPDFBundle(),
     );
 }
 ```
@@ -58,11 +42,11 @@ public function registerBundles()
 Using TCPDF
 -----------
 
-You can obtain the `white_october.tcpdf` service from the container,
+You can obtain the `jhovanic.tcpdf` service from the container,
 and then create a new TCPDF object via the service:
 
 ``` php
-$pdfObj = $container->get("white_october.tcpdf")->create();
+$pdfObj = $container->get("jhovanic.tcpdf")->create();
 ```
 
 From hereon in, you are using a TCPDF object to work with as normal.
@@ -74,7 +58,7 @@ If you want to use your own custom TCPDF-based class, you can use
 the `class` parameter in your configuration eg in `config.yml`:
 
 ``` yaml
-white_october_tcpdf:
+jhovanic_tcpdf:
     class: 'Acme\MyBundle\MyTCPDFClass'
 ```
 
@@ -88,3 +72,4 @@ This bundle is under the MIT license. See the complete license in the bundle:
 
     Resources/meta/LICENSE
 
+[1]: https://github.com/whiteoctober/WhiteOctoberTCPDFBundle "WhiteOctoberTCPDFBundle"
