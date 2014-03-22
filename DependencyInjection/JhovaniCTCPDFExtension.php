@@ -11,7 +11,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension,
 
 use JhovaniC\TCPDFBundle\DependencyInjection\Configuration;
 
-class WhiteOctoberTCPDFExtension extends Extension
+class JhovaniCTCPDFExtension extends Extension
 {
     /**
      * Load our configuration
