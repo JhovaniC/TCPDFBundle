@@ -6,7 +6,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Filesystem\Filesystem;
 
-class JhovaniCTCPDFBundle extends Bundle
+class JhovanicTCPDFBundle extends Bundle
 {
     /**
      * Ran on bundle boot, our TCPDF configuration constants

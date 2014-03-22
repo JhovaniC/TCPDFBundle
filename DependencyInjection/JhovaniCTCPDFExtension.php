@@ -11,7 +11,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension,
 
 use JhovaniC\TCPDFBundle\DependencyInjection\Configuration;
 
-class JhovaniCTCPDFExtension extends Extension
+class JhovanicTCPDFExtension extends Extension
 {
     /**
      * Load our configuration
