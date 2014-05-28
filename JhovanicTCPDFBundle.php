@@ -14,6 +14,9 @@ class JhovanicTCPDFBundle extends Bundle
      */
     public function boot()
     {
+        if (!$this->container->hasParameter('jhovanic_tcpdf.tcpdf'))
+            return;
+
         // Define our TCPDF variables
         $config = $this->container->getParameter('jhovanic_tcpdf.tcpdf');
 
