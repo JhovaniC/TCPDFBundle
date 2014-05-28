@@ -41,6 +41,16 @@ class JhovanicTCPDFBundle extends Bundle
                             $this->createDir($value);
                         }
 
+                        // Added trailing slash because somehow the yml parser
+                        // removes slashes at the end
+                        if ($k === 'k_path_fonts' && is_dir($value)) {
+                            $value = $value . '/';
+                        }
+
+                        if ($k === 'k_path_images' && is_dir($value)) {
+                            $value = $value . '/';
+                        }
+
                         define($constKey, $value);
                     }
                 }
