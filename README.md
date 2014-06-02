@@ -52,7 +52,7 @@ $pdfObj = $container->get("jhovanic.tcpdf")->create();
 since all controller classes have the service-container injected to them you can also write
 
 ``` php
-$pdfObj = $this->get("jhovanic.tcpdf")->create();
+$pdfObj = $this->container->get("jhovanic.tcpdf")->create();
 ```
 
 in your controller class.
