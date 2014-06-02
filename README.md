@@ -34,7 +34,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new JhovaniC\TCPDFBundle\JhovaniCTCPDFBundle(),
+        new JhovaniC\TCPDFBundle\JhovanicTCPDFBundle(),
     );
 }
 ```
@@ -48,6 +48,15 @@ and then create a new TCPDF object via the service:
 ``` php
 $pdfObj = $container->get("jhovanic.tcpdf")->create();
 ```
+
+since all controller classes have the service-container injected to them you can also write
+
+``` php
+$pdfObj = $this->get("jhovanic.tcpdf")->create();
+```
+
+in your controller class.
+
 
 From hereon in, you are using a TCPDF object to work with as normal.
 
